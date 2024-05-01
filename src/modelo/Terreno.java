@@ -29,4 +29,17 @@ public class Terreno extends Financiamento { //subclasse de Financiamento
         System.out.printf("Pagamento mensal: R$%.2f\n", calcularPagamentoMensal());
         System.out.printf("Pagamento total: R$%.2f\n", calcularPagamentoTotal());
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("----- Dados do financiamento [TERRENO] -----").append("\n");
+        builder.append("Valor do imóvel: ").append(df.format(getValorImovel())).append("\n");
+        builder.append("Prazo do financiamento: ").append(getPrazoFinanciamento()).append("\n");
+        builder.append("Taxa de juros anual: ").append(getTaxaJuros()).append("\n");
+        builder.append("Zona: ").append(getZona()).append("\n");
+        builder.append("Pagamento mensal: ").append(df.format(calcularPagamentoMensal())).append("\n");
+        builder.append("Pagamento total: ").append(df.format(calcularPagamentoTotal())).append("\n");
+        return builder.toString();
+    }
 }
